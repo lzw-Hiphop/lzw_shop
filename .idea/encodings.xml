@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/cart/EcProductExt.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/controller/CartController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/controller/EcCategoryController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/controller/EcProductController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/controller/IndexController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/service/CartService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/service/EcProductService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/service/ProduceService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/service/impl/CartServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/service/impl/EcProductServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/net/togogo/web/service/impl/ProduceServiceImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/log4j.properties" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/spring-redis.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/category.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/nopaid.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/paid.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/shopcart.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/css/Gjun.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/index.jsp" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

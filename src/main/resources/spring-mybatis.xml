@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 包扫描器：spring 容器它会去扫描 net.togogo.javaee 中所有的类，将用 到@Repository、@Service、@Controller 三个注解其中一个 的 javabean 标识成 spring 组件，实例化这些组件，并且会将这些组件装
+到一个类似于 HashMap 中 HashMap<String,Object> map = new HashMap<String,Object>(); map.put("jdbcDao",JdbcDao 对象) map.put("myBatisDao",MyBatisDao 对象) map.put("jdbcService",JdbcService 对象) -->
+    <context:component-scan base-package="net.togogo.web"></context:component-scan>
+
+    <context:property-placeholder location="classpath:db.properties"/>
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
+          destroy-method="close"> <!--数据库驱动 -->
+        <property name="driverClassName" value="${jdbc.driver}"/> <!--连接数据库的 url -->
+        <property name="url" value="${jdbc.url}"/> <!--连接数据库的用户名 -->
+        <property name="username" value="${jdbc.username}"/> <!--连接数据库的密码 -->
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--mybatis 配置，此时，可以不需要 mybatis_config.xml-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mappers/*Mapper.xml"/>
+    </bean> <!--扫描 mybatis 定义的 mapper 类 扫描到后会向 spring 容器中注册 mapper 类对 象-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="net.togogo.web.mapper"/>
+    </bean>
+
+</beans>
