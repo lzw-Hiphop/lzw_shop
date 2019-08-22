@@ -28,7 +28,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="net.togogo.web.mapper" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator> <!--对应数据库表 mysql 可以加入主键自增 字段命名 忽略某字段等 --> <!-- 指定数据库表 -->
-        <table schema="" tableName="ec_product"></table>
+        <table schema="" tableName="ec_user"></table>
     </context>
 
 </generatorConfiguration>

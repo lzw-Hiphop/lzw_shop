@@ -5,6 +5,7 @@ import net.togogo.web.cart.EcProductExt;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Collection;
+import java.util.Set;
 
 public interface CartService {
 
@@ -43,4 +44,6 @@ public interface CartService {
     public boolean minusStore(HttpServletRequest request);
 
     public void flashSale(int productId);
+
+    public Set<String> range();
 }

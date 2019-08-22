@@ -1,5 +1,5 @@
-<!--文件头开始-->
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta http-equiv="Content-Language" content="zh-cn">
@@ -69,7 +69,7 @@
 </table>
 <br>
 
-<form action="adm/loginAction.do" method=post name="login">
+<form action="/login" method=post name="login">
     <table cellpadding=3 cellspacing=1 align=center class=tableborder1>
         <tr>
             <td valign=middle colspan=2 align=center height=25 background="images/bg2.gif"><font color="#ffffff"><b>输入您的用户名、密码登录</b></font>
@@ -77,17 +77,16 @@
         </tr>
         <tr>
             <td valign=middle class=tablebody1>请输入您的用户名</td>
-            <td valign=middle class=tablebody1><INPUT name=userid type=text> &nbsp;
+            <td valign=middle class=tablebody1><input name=username type=text> &nbsp;
                 <a href="register.jsp">没有注册？</a>
             </td>
         </tr>
         <tr>
             <td valign=middle class=tablebody1>请输入您的密码</td>
-            <td valign=middle class=tablebody1><INPUT name=password type=password> &nbsp;</td>
+            <td valign=middle class=tablebody1><input name=password type=password> &nbsp;</td>
         </tr>
         <tr>
-            <td class=tablebody2 valign=middle colspan=2 align=center><input type=button value="登 录"
-                                                                             onclick="javascript:checkMe()"></td>
+            <td class=tablebody2 valign=middle colspan=2 align=center><input type=submit value="登 录"></td>
         </tr>
     </table>
 </form>

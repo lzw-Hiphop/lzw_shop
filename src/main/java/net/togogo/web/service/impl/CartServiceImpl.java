@@ -123,6 +123,10 @@ public class CartServiceImpl implements CartService {
             for (Object pid : cart.keySet()) {
                 EcProductExt productExt = (EcProductExt) cart.get(pid);
                 int store = ecProductMapper.selectByPrimaryKey((Integer) pid).getStore() - productExt.getCount();
+
+                //将销量数据存入reids，需要启动redis
+                redisTemplate.opsForZSet().incrementScore("productRange",productExt.getProductName(),productExt.getCount());
+
                 productExt.setStore(store);
                 ecProductMapper.updateByPrimaryKeySelective(productExt);
                 request.getSession().removeAttribute(SESSION_CART_KEY);
@@ -144,4 +148,11 @@ public class CartServiceImpl implements CartService {
         //将商品id和剩余库存放进redis中
         redisTemplate.opsForValue().set("product"+productId,store+"");
     }
+
+    //排行榜
+    public Set<String> range(){
+        Set productRange = redisTemplate.opsForZSet().reverseRange("productRange", 0, -1);
+        return productRange;
+    }
+
 }

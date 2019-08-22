@@ -65,8 +65,6 @@
 
                 <td><a href="../../index.html">食品</a></td>
 
-                <td><a href="/cart/range">排行榜</a></td>
-
             </table>
         </td>
     </tr>
@@ -97,54 +95,26 @@
 <br>
 
 <form action="loginAction.do" method=post name="login">
-    <table cellpadding=4 cellspacing=1 align=center class=tableborder1>
+    <table cellpadding=1 cellspacing=1 align=center class=tableborder1>
         <tr>
             <td valign=middle align=center height=25 background="../../images/bg2.gif" width=""><font
-                    color="#ffffff"><b>序号</b></font></td>
+                    color="#ffffff"><b>排名</b></font></td>
             <td valign=middle align=center height=25 background="../../images/bg2.gif" width=""><font
-                    color="#ffffff"><b>产品名称</b></font></td>
-            <td valign=middle align=center height=25 background="../../images/bg2.gif" width=""><font
-                    color="#ffffff"><b>价格</b></font></td>
-            <td valign=middle align=center height=25 background="../../images/bg2.gif" width=""><font
-                    color="#ffffff"><b>库存</b></font></td>
-            <td valign=middle align=center height=25 background="../../images/bg2.gif" width=""><font
-                    color="#ffffff"><b>操作</b></font></td>
+                    color="#ffffff"><b>商品名</b></font></td>
         </tr>
 
 
-        <c:forEach var="p" items="${products}">
+        <c:forEach var="i" begin="1" end="${productRange.size()}" step="1">
             <tr>
-                <td class=tablebody1 valign=middle align=center width="">${p.productId}</td>
-                <td class=tablebody2 valign=middle width="">&nbsp;&nbsp;<a
-                        href="/productDetail?productId=${p.productId}">${p.productName}</a>
-                </td>
-                <td class=tablebody1 valign=middle align=center width="">${p.baseprice}</td>
-                <td class=tablebody2 valign=middle align=center width="">${p.store}</td>
-                <td class=tablebody1 valign=middle align=center width=""><a href="/cart/add?productId=${p.productId}">
-                    <img class="cart" id="${p.productId}" border="0" src="../../images/car_new.gif" width="97"
-                         height="18"></a></td>
+                <td class=tablebody2 valign=middle align=center width="">${i}</td>
+                <td class=tablebody1 valign=middle align=center width="">${productRange.toArray()[i-1]}</td>
             </tr>
         </c:forEach>
 
     </table>
 </form>
 
-<table cellpadding=4 cellspacing=1 align=center class=tableborder1>
-    <tr>
-        <td valign=middle align=center height=25 background="../../images/bg2.gif" width=""><font
-                color="#ffffff"><b>浏览记录</b></font></td>
-        <td valign=middle align=center height=25 background="../../images/bg2.gif" width=""><font
-                color="#ffffff"><b>价格</b></font></td>
-    </tr>
-    <c:forEach var="history" items="${historyProductList}">
-    <tr>
-        <td class=tablebody1 valign=middle align=center width="">&nbsp;&nbsp;<a
-                href="/productDetail?productId=${history.productId}">${history.productName}</a>
-        </td>
-        <td class=tablebody2 valign=middle align=center width="">${history.baseprice}</td>
-    </tr>
-    </c:forEach>
-</table>
+
 <!--文件尾开始-->
 <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" height="28">
     <tr>

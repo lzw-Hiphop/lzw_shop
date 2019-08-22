@@ -85,4 +85,11 @@ public class CartController {
             return "nopaid";
         }
     }
+
+    @RequestMapping("/range")
+    public String range(Model model){
+        Set set = cartService.range();
+        model.addAttribute("productRange",set);
+        return "sale_range";
+    }
 }
